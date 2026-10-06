@@ -115,8 +115,8 @@ npm run format:check
 
 ### Branch naming
 
-`<type>/<linear-issue-id>-<short-slug>`, e.g. `feat/EC-12-document-upload`,
-`fix/EC-31-auth-redirect-loop`.
+`<type>/<linear-issue-id>-<short-slug>`, e.g. `feat/EME-12-document-upload`,
+`fix/EME-31-auth-redirect-loop`.
 
 Types: `feat`, `fix`, `chore`, `refactor`, `docs`.
 
@@ -126,15 +126,26 @@ Types: `feat`, `fix`, `chore`, `refactor`, `docs`.
 issue ID in the subject so Linear auto-links the commit:
 
 ```
-feat(EC-12): add document upload screen
-fix(EC-31): prevent redirect loop on expired session
+feat(EME-12): add document upload screen
+fix(EME-31): prevent redirect loop on expired session
 ```
 
 ### Linear
 
+Team key: `EME`. The repo ships a `.linear.toml` (workspace + default team,
+no secrets) for [linear-cli](https://github.com/schpet/linear-cli):
+
+```bash
+brew install schpet/tap/linear
+linear auth login                 # personal API key, stored outside the repo
+linear issue query --all-assignees
+linear issue start EME-12         # creates the correctly named branch
+```
+
+
 1. Create a Linear team/project for Emergency Copilot.
 2. In Linear → Settings → this team → connect the **GitHub** integration and
    link this repository.
-3. Use the issue's identifier (e.g. `EC-12`) in branch names and commit
+3. Use the issue's identifier (e.g. `EME-12`) in branch names and commit
    subjects as shown above — Linear picks these up automatically and links
    the PR/commit to the issue, and moves the issue on merge if configured.
