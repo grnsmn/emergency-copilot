@@ -142,7 +142,6 @@ linear issue query --all-assignees
 linear issue start EME-12         # creates the correctly named branch
 ```
 
-
 1. Create a Linear team/project for Emergency Copilot.
 2. In Linear → Settings → this team → connect the **GitHub** integration and
    link this repository.
