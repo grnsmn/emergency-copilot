@@ -1,0 +1,34 @@
+{
+  "common": {
+    "appName": "Emergency Copilot",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "save": "Save",
+    "loading": "Loading..."
+  },
+  "auth": {
+    "title": "Sign in",
+    "subtitle": "We'll email you a one-time code. No password needed.",
+    "emailPlaceholder": "Your email",
+    "sendCode": "Send code"
+  },
+  "home": {
+    "title": "Your health documents",
+    "emptyState": "You haven't uploaded any documents yet.",
+    "uploadCta": "Upload a document"
+  },
+  "documents": {
+    "title": "Documents",
+    "status": {
+      "uploaded": "Uploaded",
+      "processing": "Processing",
+      "extracted": "Data extracted",
+      "failed": "Processing failed"
+    }
+  },
+  "emergencyCard": {
+    "title": "Emergency Card",
+    "subtitle": "For you only. A quick summary to show in an emergency.",
+    "emptyState": "Your Emergency Card is still empty."
+  }
+}

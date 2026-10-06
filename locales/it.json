@@ -1,0 +1,34 @@
+{
+  "common": {
+    "appName": "Emergency Copilot",
+    "continue": "Continua",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "loading": "Caricamento..."
+  },
+  "auth": {
+    "title": "Accedi",
+    "subtitle": "Ti invieremo un codice di accesso via email, nessuna password richiesta.",
+    "emailPlaceholder": "La tua email",
+    "sendCode": "Invia codice"
+  },
+  "home": {
+    "title": "I tuoi documenti sanitari",
+    "emptyState": "Non hai ancora caricato nessun documento.",
+    "uploadCta": "Carica un documento"
+  },
+  "documents": {
+    "title": "Documenti",
+    "status": {
+      "uploaded": "Caricato",
+      "processing": "In elaborazione",
+      "extracted": "Dati estratti",
+      "failed": "Elaborazione fallita"
+    }
+  },
+  "emergencyCard": {
+    "title": "Emergency Card",
+    "subtitle": "Solo per te. Una sintesi rapida da mostrare in caso di emergenza.",
+    "emptyState": "La tua Emergency Card è ancora vuota."
+  }
+}
