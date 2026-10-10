@@ -47,28 +47,44 @@ supabase/
 
 ## Getting started
 
+Requires Docker (for local Supabase) and the Supabase CLI.
+
 ```bash
 npm install
-cp .env.example .env   # fill in your Supabase project URL + anon key
+npx supabase start            # local Postgres/Auth/Storage/Functions + Studio
+cp .env.example .env.local    # API_URL + PUBLISHABLE_KEY printed by `supabase start`
 npm run start
 ```
 
 Then press `i` / `a` / `w` in the Expo CLI, or scan the QR code with Expo Go.
+Local Studio: http://127.0.0.1:54323 — local inbox for login emails (Mailpit):
+http://127.0.0.1:54324.
 
-## Environment variables
+## Environments
 
-| Variable                        | Where                  | Notes                            |
-| ------------------------------- | ---------------------- | -------------------------------- |
-| `EXPO_PUBLIC_SUPABASE_URL`      | `.env`                 | Public, safe in client bundle    |
-| `EXPO_PUBLIC_SUPABASE_ANON_KEY` | `.env`                 | Public, safe in client bundle    |
-| Edge Function secrets (future)  | `supabase secrets set` | Never committed, never in `.env` |
+| Environment | Supabase                                       | Env file     | Used for                     |
+| ----------- | ---------------------------------------------- | ------------ | ---------------------------- |
+| Local       | `npx supabase start`                           | `.env.local` | All development, experiments |
+| Cloud (MVP) | project `emergency-copilot`, eu-central-1 (EU) | `.env`       | Real MVP data                |
+
+Expo gives `.env.local` precedence over `.env`, so with `.env.local` present the
+app talks to local Supabase. **Never experiment on the cloud project**: it only
+receives migrations already tested locally (`npx supabase db reset` locally,
+then `npx supabase db push`).
+
+| Variable                               | Notes                                                  |
+| -------------------------------------- | ------------------------------------------------------ |
+| `EXPO_PUBLIC_SUPABASE_URL`             | Public, safe in client bundle                          |
+| `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Public (`sb_publishable_…`), safe in client bundle     |
+| Edge Function secrets (future)         | `supabase secrets set` — never committed, never `.env` |
 
 ## Backend (Supabase)
 
 ```bash
 npx supabase login
-npx supabase link --project-ref <your-project-ref>
-npx supabase db push          # applies supabase/migrations/*.sql
+npx supabase link --project-ref <project-ref>   # asks for the DB password
+npx supabase db push                            # applies supabase/migrations/*.sql
+npx supabase functions deploy
 ```
 
 Schema (`supabase/migrations/0001_init.sql`), all owner-scoped via RLS:
