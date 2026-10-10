@@ -10,7 +10,18 @@
     "title": "Sign in",
     "subtitle": "We'll email you a one-time code. No password needed.",
     "emailPlaceholder": "Your email",
-    "sendCode": "Send code"
+    "sendCode": "Send code",
+    "codeSent": "We sent a 6-digit code to {{email}}. Enter it below.",
+    "codePlaceholder": "000000",
+    "verifyCode": "Sign in",
+    "resendCode": "Resend code",
+    "changeEmail": "Use a different email",
+    "signOut": "Sign out",
+    "errors": {
+      "sendFailed": "We couldn't send the code. Please try again.",
+      "tooManyRequests": "Too many attempts. Wait a few minutes and try again.",
+      "invalidCode": "Invalid or expired code."
+    }
   },
   "home": {
     "title": "Your health documents",
