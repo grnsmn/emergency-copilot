@@ -242,6 +242,16 @@ otp_expiry = 3600
 # admin_email = "admin@email.com"
 # sender_name = "Admin"
 
+# Passwordless sign-in uses a 6-digit code, not a link. New users get the
+# "confirmation" email, returning users the "magic_link" one: both show the code.
+[auth.email.template.confirmation]
+subject = "Il tuo codice Emergency Copilot / Your Emergency Copilot code"
+content_path = "./supabase/templates/otp.html"
+
+[auth.email.template.magic_link]
+subject = "Il tuo codice Emergency Copilot / Your Emergency Copilot code"
+content_path = "./supabase/templates/otp.html"
+
 # Uncomment to customize email template
 # [auth.email.template.invite]
 # subject = "You have been invited"

@@ -10,7 +10,18 @@
     "title": "Accedi",
     "subtitle": "Ti invieremo un codice di accesso via email, nessuna password richiesta.",
     "emailPlaceholder": "La tua email",
-    "sendCode": "Invia codice"
+    "sendCode": "Invia codice",
+    "codeSent": "Abbiamo inviato un codice di 6 cifre a {{email}}. Inseriscilo qui sotto.",
+    "codePlaceholder": "000000",
+    "verifyCode": "Accedi",
+    "resendCode": "Invia di nuovo il codice",
+    "changeEmail": "Usa un'altra email",
+    "signOut": "Esci",
+    "errors": {
+      "sendFailed": "Non siamo riusciti a inviare il codice. Riprova.",
+      "tooManyRequests": "Troppi tentativi. Attendi qualche minuto e riprova.",
+      "invalidCode": "Codice non valido o scaduto."
+    }
   },
   "home": {
     "title": "I tuoi documenti sanitari",
